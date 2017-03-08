@@ -2,19 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Ship
+/// Controlling the Ship
 /// </summary>
 public class Ship : MonoBehaviour {
-    
+
+    //Declare field to hold Rigidbody2D component
+    private Rigidbody2D myRigidBody2D;
+
+    //Declare field to hold thrustDirection
+    private Vector2 thrustDirection = new Vector2(1f,0f);
+
     //Declare Rotation Amount
     const int rotateDegPerSec = 100;
 
-    //Use this to hold the component
+    //Declare constant thrustForce
+    const int thrustForce = 10;
 
 	// Use this for initialization
 	void Start ()
     {
-        
+        //Set field to Rigidbody2D attached to ship
+        myRigidBody2D = GetComponent<Rigidbody2D>();
+
+        //Add thrustDirection
+
     }
 	
 	// Update is called once per frame
