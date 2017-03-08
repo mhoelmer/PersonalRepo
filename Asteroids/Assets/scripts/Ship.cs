@@ -13,10 +13,10 @@ public class Ship : MonoBehaviour {
     private Vector2 thrustDirection = new Vector2(1f,0f);
 
     //Declare Rotation Amount
-    const int rotateDegPerSec = 100;
+    const int RotateDegPerSec = 100;
 
     //Declare constant thrustForce
-    const int thrustForce = 10;
+    const int ThrustForce = 10;
 
 	// Use this for initialization
 	void Start ()
@@ -32,20 +32,26 @@ public class Ship : MonoBehaviour {
 	void Update () {
 
         float rotationInput = Input.GetAxisRaw("Rotate");
-        float rotationAmount = rotateDegPerSec * Time.deltaTime;
-        if(rotationInput == 0)
+        if (rotationInput != 0)
         {
-            rotationAmount *= 0;
+            float rotationAmount = RotateDegPerSec * Time.deltaTime;
+            if (rotationInput > 0)
+            {
+                rotationAmount *= -1;
+            }
+
+            transform.Rotate(Vector3.forward, rotationAmount);
         }
-        else if(rotationInput == 1)
+    }
+
+    // Called 50 times per second
+    void FixedUpdate()
+    {
+        if (Input.GetAxisRaw("Thrust") > 0)
         {
-            rotationAmount *= -1;
-        }
-        else if (rotationInput == -1)
-        {
-            rotationAmount *= 1;
+            myRigidBody2D.AddForce(thrustDirection * ThrustForce,
+                ForceMode2D.Force);
         }
 
-        transform.Rotate(Vector3.forward, rotationAmount);
     }
 }
