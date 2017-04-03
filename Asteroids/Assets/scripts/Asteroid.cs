@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class Asteroid : MonoBehaviour
 {
-
     // Use this for initialization
     void Start()
     {
