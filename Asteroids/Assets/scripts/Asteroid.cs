@@ -7,6 +7,14 @@ using UnityEngine;
 /// </summary>
 public class Asteroid : MonoBehaviour
 {
+    //sprite fields
+    [SerializeField]
+    private int whiteSprite;
+    [SerializeField]
+    private int redSprite;
+    [SerializeField]
+    private int greenSprite;
+
     // Use this for initialization
     void Start()
     {
