@@ -26,14 +26,14 @@ public class Ship : MonoBehaviour {
     // round graphic for the ship and make sure the collider is completely inside
     // the ship graphic. If you do that, ship wrapping should work fine
     // wrapping support
-    float colliderRadius;
+    
 
     // Use this for initialization
     void Start () {
 
         // save for efficiency
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        colliderRadius = gameObject.GetComponent<CircleCollider2D>().radius;
+       
     }
 
     // Update is called once per frame
@@ -69,25 +69,6 @@ public class Ship : MonoBehaviour {
         } 
     }
 
-    /// <summary>
-    /// Called when the camera can no longer see the ship
-    /// </summary>
-    void OnBecameInvisible() {
-        Vector2 position = transform.position;
-
-        // check left, right, top, and bottom sides
-        if (position.x + colliderRadius < ScreenUtils.ScreenLeft ||
-            position.x - colliderRadius > ScreenUtils.ScreenRight)
-        {
-            position.x *= -1;
-        }
-        if (position.y - colliderRadius > ScreenUtils.ScreenTop ||
-            position.y + colliderRadius < ScreenUtils.ScreenBottom)
-        {
-            position.y *= -1;
-        }
-
-        // move ship
-        transform.position = position;
+   
     }
-}
+

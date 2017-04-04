@@ -7,17 +7,36 @@ using UnityEngine;
 /// </summary>
 public class Asteroid : MonoBehaviour
 {
-    //sprite fields
+    //ssaved for efficiency
     [SerializeField]
-    private int whiteSprite;
+    Sprite whiteSprite;
     [SerializeField]
-    private int redSprite;
+    Sprite redSprite;
     [SerializeField]
-    private int greenSprite;
+    Sprite greenSprite;
+
+    [SerializeField]
+    GameObject asteroid;
 
     // Use this for initialization
     void Start()
     {
+        //set random sprite
+        SpriteRenderer spriteRenderer =
+            asteroid.GetComponent<SpriteRenderer>();
+        int spriteNumber = Random.Range(0, 3);
+        if(spriteNumber < 1)
+        {
+            spriteRenderer.sprite = whiteSprite;
+        }
+        else if(spriteNumber <2)
+        {
+            spriteRenderer.sprite = redSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = greenSprite;
+        }
         //apply impulse force
         const float ImpulseForceRange = 2f;
         const float MinImpulseForce = 3f;
