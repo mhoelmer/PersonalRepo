@@ -40,4 +40,14 @@ public class Asteroid : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Sets direction
+    /// </summary>
+    public void SetDirection()  {
+
+    }
+    
+
+    
 }
