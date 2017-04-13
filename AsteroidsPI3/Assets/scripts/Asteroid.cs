@@ -5,17 +5,14 @@ using UnityEngine;
 /// <summary>
 /// An asteroid
 /// </summary>
-public class Asteroid : MonoBehaviour {
+public class Asteroid : MonoBehaviour
+{
 
-    [SerializeField]
-    Sprite asteroidSprite0;
-    [SerializeField]
-    Sprite asteroidSprite1;
-    [SerializeField]
-    Sprite asteroidSprite2;
+
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         // apply impulse force to get asteroid moving
         const float MinImpulseForce = 3f;
@@ -28,22 +25,12 @@ public class Asteroid : MonoBehaviour {
             direction * magnitude,
             ForceMode2D.Impulse);
 
-        // set random sprite for asteroid
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        int spriteNumber = Random.Range(0, 3);
-        if (spriteNumber < 1) {
-            spriteRenderer.sprite = asteroidSprite0;
-        } else if (spriteNumber < 2) {
-            spriteRenderer.sprite = asteroidSprite1;
-        } else {
-            spriteRenderer.sprite = asteroidSprite2;
-        }
+
+        // sets direction
+        //public void SetDirection(Dir direct)
+        //{
+
+        //}
+
     }
-
-    // sets direction
-    //public void SetDirection(Dir direct)
-    //{
-
-    //}
-
 }
