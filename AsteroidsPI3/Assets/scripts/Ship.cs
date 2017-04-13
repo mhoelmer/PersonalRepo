@@ -53,4 +53,14 @@ public class Ship : MonoBehaviour {
         } 
     }
 
+    ///<summary>
+    ///Destroys ship on collision
+    /// </summary>
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if(coll.gameObject.tag == "Asteroid")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

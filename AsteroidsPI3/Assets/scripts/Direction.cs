@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Direction{
-
     ///<summary>
     ///An enumeration for direction
     /// </summary>
-    
-    public enum Direction{
+
+    public enum Dir
+    {
         Up,
         Down,
         Left,
         Right
     }
-}
+
+

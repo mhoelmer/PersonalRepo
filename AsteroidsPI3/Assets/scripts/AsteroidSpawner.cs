@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// An asteroid spawner
+/// Spawns asteroids
 /// </summary>
-
-
-
 public class AsteroidSpawner : MonoBehaviour {
 
     #region Fields
 
     [SerializeField]
-    prefabAsteroid;
-    #endregion
+    GameObject prefabAsteroid;
 
+    #endregion
     // Use this for initialization
     void Start () {
 		
