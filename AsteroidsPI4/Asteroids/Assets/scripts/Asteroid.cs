@@ -105,7 +105,7 @@ public class Asteroid : MonoBehaviour {
     {
         if(coll.gameObject.tag == "Bullet")
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
     }
